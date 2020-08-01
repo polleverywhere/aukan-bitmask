@@ -18,7 +18,7 @@ module AukanBitmask
       # Emulate the Rails typecast that happens in case the value originated
       # from a web form where the value is typically "0"/"1".
       case major_version
-      when 5
+      when 5, 6
         ::ActiveRecord::Type::Boolean.new.cast(val)
       when 4
         ::ActiveRecord::Type::Boolean.new.type_cast_from_user(val)
